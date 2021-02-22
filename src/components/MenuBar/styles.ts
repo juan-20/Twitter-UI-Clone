@@ -1,6 +1,6 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Email, ExitToApp, FavoriteBorder, Home, Notifications, Person, Twitter } from '../../styles/Icon';
 
-import { Home, Notifications, Email, FavoriteBorder ,Person, ExitToApp, Twitter } from '../../styles/Icon'
 
 export const Container = styled.div`
   display: none;
@@ -19,9 +19,9 @@ export const Container = styled.div`
       overflow-y: auto;
 
   }
-`; 
+`;
 
-export const  Topside      = styled.div`
+export const Topside = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,9 +32,9 @@ export const  Topside      = styled.div`
 `;
 
 
-export const  Logo         = styled(Twitter)`
+export const Logo = styled(Twitter)`
      width: 41px;
-    height: 41px;
+     height: 41px;
 
     > path {
         fill: var(--twitter);
@@ -45,19 +45,68 @@ export const  Logo         = styled(Twitter)`
 `;
 
 
-export const  MenuButton   = styled.div`
+export const MenuButton = styled.button`
     display: flex;
     align-items: center;
     flex-shrink: 0;
 
     >span{
-        display: block;
+        display: none;
     }
 
     @media (min-width: 1280px){
         >span{
             display: inline;
             margin-left: 19px;
+
+            font-weight: bold; 
+            font-size: 19px;
+
+        }
+            padding-right: 15px;
+    }
+
+    padding: 8.25px 0;
+    outline: 0;
+
+    & + button {
+        margin-top: 16.5px;
+    }
+
+    /* botão azul */
+    & + button:last-child{
+        margin-top: 33px;
+        width: 40px;
+        height: 40px;
+        >span{
+            display:none;
+        }
+    
+
+    @media (min-width: 1280px){
+        width:  100%;
+        height: unset;
+        >span{
+            display: inline; 
+        }
+        & + button:last-child{
+
+        }
+    }
+    }
+
+    cursor: pointer;
+    border-radius: 25px;
+
+    &:hover {
+        background: var(--twitter-dark-hover)
+    }
+
+    &:hover, &.active{
+        span,svg{
+            color: var(--twitter);
+            fill: var(--twitter);
+            
         }
     }
 `;
@@ -72,8 +121,62 @@ const iconCSS = css`
     color: var(--white);
 `;
 
-export const  HomeIcon     = styled(Home)`${iconCSS}`;
-export const  BellIcon     = styled(Notifications)`${iconCSS}`;
-export const  EmailIcon    = styled(Email)`${iconCSS}`;
-export const  FavoriteIcon = styled(FavoriteBorder)`${iconCSS}`;
-export const  ProfileIcon  = styled(Person)`${iconCSS}`;
+export const HomeIcon = styled(Home)`${iconCSS}`;
+export const BellIcon = styled(Notifications)`${iconCSS}`;
+export const EmailIcon = styled(Email)`${iconCSS}`;
+export const FavoriteIcon = styled(FavoriteBorder)`${iconCSS}`;
+export const ProfileIcon = styled(Person)`${iconCSS}`;
+
+
+export const Botside = styled.div`
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+`;
+export const Avatar = styled.div`
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: var(--gray);
+
+
+`;
+export const ProfileData = styled.div`
+    // na tela pequena é só a foto
+    display: none;
+
+    @media (min-width: 1280px) {
+        display: flex;
+        flex-direction: column;
+
+        margin-left: 10 px;
+        font-size: 14px;
+
+        >span{
+            color: var(--gray);
+        }
+    }
+ `;
+
+export const ExitIcon = styled(ExitToApp)`
+    display: none;
+
+    @media (min-width: 1280px){
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        color: var(--white);
+        margin-left: 30px;
+        cursor: pointer;
+
+        &:hover{
+            >path{
+                color: var(--like);
+            }
+        }
+    }
+`;

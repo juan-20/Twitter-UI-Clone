@@ -1,6 +1,5 @@
-import styled from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import { createGlobalStyle} from 'styled-components';
 
 export default createGlobalStyle`
 *{
@@ -35,11 +34,11 @@ export default createGlobalStyle`
     --outline: #2F3336;
     --retweet: #00C06B;
     --like: #E8265E;
-    --twitter: #916BEA;
+    --twitter: #2C8ED6;
     --twitter-dark-hover: #171701; 
     --twitter-light-hover: #2C8ED6;
   }
  }
  
  `;
-  
+
